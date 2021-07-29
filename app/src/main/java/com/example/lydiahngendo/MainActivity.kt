@@ -4,6 +4,7 @@ import android.app.Dialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.*
+import androidx.databinding.DataBindingUtil
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -12,10 +13,7 @@ import com.example.lydiahngendo.R
 import com.example.lydiahngendo.PostModel
 import com.example.lydiahngendo.HomeViewModel
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.create_post_dialog.view.*
-
-import android.synthetic.main.activity_main.*
-import android.synthetic.main.post_dialog.view.*
+import kotlinx.android.synthetic.main.post_dialog.view.*
 
 class MainActivity : AppCompatActivity(), HomeAdapter.HomeListener {
 
@@ -34,12 +32,13 @@ class MainActivity : AppCompatActivity(), HomeAdapter.HomeListener {
 
         hvm.postModelListLiveData?.observe(this, Observer {
             if (it!=null){
+
                 rv_home.visibility = View.VISIBLE
                 adapter.setData(it as ArrayList<PostModel>)
             }else{
                 showToast("Something went wrong")
             }
-            progress_home.visibility = View.GONE
+           // progress_home.visibility = View.GONE
         })
 
     }
@@ -122,3 +121,5 @@ class MainActivity : AppCompatActivity(), HomeAdapter.HomeListener {
     }
 
 }
+
+

@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.lydiahngendo.R
 import com.example.lydiahngendo.PostModel
-import kotlinx.android.synthetic.main.home_rv_item_view.view.*
+import kotlinx.android.synthetic.main.recyclerpage.view.*
 
 class HomeAdapter(var listener:HomeListener) : RecyclerView.Adapter<HomeAdapter.HomeViewHolder>(){
 
